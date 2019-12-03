@@ -1,0 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded');
+html, body {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-logo {
+    width: 300px;
+    height: auto;
+  }
