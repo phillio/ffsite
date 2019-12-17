@@ -2,4 +2,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.player-table-container {
+    display: flex;
+    width: 70vw;
+    height: 70vh;
+    overflow: scroll;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.header-row {
+    display: flex;
+    position: sticky;
+    top: 0;
+    margin: 10px 0;
+}
+
+.header-row, .header-abbr {
+    background-color: #0D162E;
+}
+
+.player-table-data {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header-player-name {
+    min-width: 250px;
+}
+
+.header-player-position {
+    min-width: 50px;
+}
+
+.header-player-teamAbbr {
+    min-width: 60px;
+}
+
+.header-player-seasonPts {
+    min-width: 75px;
+}
+
+.header-player-seasonProjectedPts {
+    min-width: 100px;
+}
+
+.header-player-weekPts {
+    min-width: 80px;
+}
+
+.header-player-weekProjectedPts {
+    min-width: 75px;
+}
+
+.header-abbr, .player-stats {
+    min-width: 50px;
+}
+
+.col-3, .col-9, .col-10, .col-11, .col-12, .col-13, .col-69 {
+    min-width: 60px;
+}
+
+.col-14, .col-61, .col-63, .col-64, .col-65, .col-66, .col-67, .col-68, .col-93 {
+    min-width: 90px;
+}
+
+.col-89, .col-90 {
+    min-width: 130px;
+}
+
+.col-91 {
+    min-width: 160px;
+}
+
+.col-5, .col-8, .col-54, .col-55, .col-56, .col-57, .col-58, .col-59, .col-60, .col-62, .col-87, .col-88, .col-92 {
+    min-width: 70px;
 }

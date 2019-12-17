@@ -1,0 +1,57 @@
+/* .player-card {
+    display: flex;
+} */
+
+/* .player-name, .player-position, .player-teamAbbr, .player-seasonPts, .player-seasonProjectedPts, .player-weekPts, .player-weekProjectedPts {
+    margin: 0 4px;
+} */
+
+.player-name {
+    min-width: 250px;
+}
+
+.player-position {
+    min-width: 50px;
+}
+
+.player-teamAbbr {
+    min-width: 60px;
+}
+
+.player-seasonPts {
+    min-width: 75px;
+}
+
+.player-seasonProjectedPts {
+    min-width: 100px;
+}
+
+.player-weekPts {
+    min-width: 80px;
+}
+
+.player-weekProjectedPts {
+    min-width: 75px;
+}
+
+/* .player-stats {
+    min-width: 50px;
+    margin: 10px 10px;
+} */
+
+/* .player-stats-63, .player-stats-64, .player-stats-65, .player-stats-66, .player-stats-67, .player-stats-68 {
+    min-width: 80px;
+}
+
+
+.player-stats-90 {
+    min-width: 120px;
+}
+
+.player-stats-91 {
+    min-width: 150px;
+}
+
+.player-stats-92, .player-stats-93 {
+    min-width: 70px;
+} */
