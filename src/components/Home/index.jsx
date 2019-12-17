@@ -9,8 +9,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [],
-      keyHeaders: []
+      allPlayers: [],
+      currentPlayers: [],
+      keyHeaders: [],
+      showPos: false
     };
   }
 
@@ -49,7 +51,7 @@ class Home extends Component {
         );
       });
 
-      this.setState({ players: offensivePlayers, keyHeaders: keySet });
+      this.setState({ allPlayers: offensivePlayers, currentPlayers: offensivePlayers, keyHeaders: keySet });
       // console.log('setstateplayerdata', this.state.players)
     } catch (error) {
       console.log("Home - render players error");
@@ -57,13 +59,117 @@ class Home extends Component {
     }
   };
 
+  showQb = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "QB"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showRb = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "RB"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showWr = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "WR"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showTe = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "TE"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showK = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "K"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showDef = async () => {
+    const currentPlayers = this.state.allPlayers
+    const filterByPos = currentPlayers.filter(player => {
+      return (
+        player.position === "DEF"
+      )
+    })
+    this.setState({currentPlayers: filterByPos})
+  }
+
+  showAll = async () => {
+    const currentPlayers = this.state.allPlayers
+    this.setState({currentPlayers: currentPlayers})
+  }
+
+  showPos = async (e) => {
+    e.preventDefault()
+    this.setState({ showPos: true }, () => {
+      document.addEventListener('click', this.hidePos);
+    });
+  }
+
+  hidePos = async (e) => {
+    if (!this.dropdownPos.contains(e.target)) {
+      this.setState({ showPos: false }, () => {
+        document.removeEventListener('click', this.hidePos);
+      });
+    }
+  }
+
   render() {
     // console.log('setstateplayerdata', this.state)
     return (
       <div className="player-table-container">
         <tr className="header-row">
           <td className="header-player-name">Player Name</td>
-          <td className="header-player-position">Pos</td>
+          <td className="header-player-position">
+            <button onClick={this.showPos}>Pos</button>
+            {
+              this.state.showPos
+                ? (
+                  <div
+                    className="header-pos"
+                    ref={(element) => {
+                      this.dropdownPos = element;
+                    }}
+                  >
+                    <button onClick={this.showAll}>All</button>
+                    <button onClick={this.showQb}>QB</button>
+                    <button onClick={this.showRb}>RB</button>
+                    <button onClick={this.showWr}>WR</button>
+                    <button onClick={this.showTe}>TE</button>
+                    <button onClick={this.showK}>K</button>
+                    <button onClick={this.showDef}>DEF</button>
+                  </div>
+                )
+                : (
+                  null
+                )
+            }
+          </td>
           <td className="header-player-teamAbbr">Team</td>
           <td className="header-player-seasonPts">Season Pts</td>
           <td className="header-player-seasonProjectedPts">Proj Total Pts</td>
@@ -74,7 +180,7 @@ class Home extends Component {
           })}
         </tr>
         <div className="player-table-data">
-          {this.state.players.map(player => {
+          {this.state.currentPlayers.map(player => {
             return (
               <PlayerRow
                 key={player.id}
