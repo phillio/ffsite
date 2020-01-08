@@ -8,7 +8,7 @@ const PlayerRow = (props) => {
     const playerStatsKeys = Object.keys(playerStats)
     const statsHolder = props.statsHolder
     return(
-        <tr className="player-card" id={`player-${props.id}`}>
+        <tr className={`player-card player-color-${props.index}`} id={`player-${props.id}`} onClick={props.onClick} style={props.style}>
             <td className="player-name" >{props.name}</td>
             <td className="player-position" >{props.position}</td>
             <td className="player-teamAbbr" >{props.teamAbbr}</td>

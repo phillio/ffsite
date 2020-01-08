@@ -8,6 +8,7 @@
 
 .player-table-container {
     display: flex;
+    position: relative;
     width: 70vw;
     height: 70vh;
     overflow: scroll;
@@ -20,16 +21,43 @@
     position: sticky;
     top: 0;
     margin: 10px 0;
+    background-color: #0D162E;
+    /* width: max-content; */
 }
 
-.header-row, .header-abbr {
+/* .header-row, .header-abbr {
+    background-color: #0D162E;
+} */
+
+/* .player-name {
+    position: sticky;
+    left: 0;
     background-color: #0D162E;
 }
+
+.player-position {
+    margin-left: -250px;
+} */
 
 .player-table-data {
     display: flex;
     flex-direction: column;
+    /* width: max-content; */
+}
 
+.player-color-0 {
+    background-color: rgba(30, 44, 82, 0.74);
+    width: max-content;
+}
+
+.player-color-1 {
+    background-color: rgba(53, 65, 100, 0.9);
+    width: max-content;
+}
+
+.header-td {
+    background-color: #0D162E;
+    min-height: 55px;
 }
 
 .header-player-name {

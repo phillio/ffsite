@@ -5,7 +5,7 @@ import "./PlayerRowHeader.css";
 const PlayerRowHeader = (props) => {
     // console.log('props',props)
     return(
-            <td className={`header-abbr col-${props.header.id}`} id={`header-abbr-${props.header.id}`} >{props.header.abbr}</td>
+            <td className={`header-td header-abbr col-${props.header.id}`} id={`header-abbr-${props.header.id}`} >{props.header.abbr}</td>
     )
 }
 
